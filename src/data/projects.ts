@@ -44,7 +44,7 @@ export const projects: Project[] = [
         thumbnail: '/images/auction-website-semester_project_2.png',
         articleImage: '/images/auction-website-semester_project_2.png',
         imageCaption: 'Auction House — real-time bidding platform built for Noroff Semester Project 2',
-        liveUrl: 'https://your-sp2-live-url.com',
+        liveUrl: 'https://auction-website-semester-project2.netlify.app/',
         repoUrl: 'https://github.com/lacdart2/semester-project-2-auction-website_lakhdar-hafsi',
         description: `Auction House is a full-featured bidding platform built as part of the Noroff Semester Project 2. 
         Users can register, list items for auction, place bids, and track their virtual currency. 
