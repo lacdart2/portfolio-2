@@ -11,7 +11,7 @@
     --accent: #b0fe76;
     --accent-hover: #c8ff96;
     --muted: #bdbdbd;
-    --faint: #555555;
+    --faint: #888888;
     --border: #222222;
 }
 
@@ -37,7 +37,7 @@ body {
     color: #0a0a0a;
 }
 
-/* Scrollbar */
+/* scrollbar */
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -54,12 +54,12 @@ body {
     background: var(--faint);
 }
 
-/* Utility: accent text */
+/* utility: accent text */
 .text-accent {
     color: var(--accent);
 }
 
-/* Animate on scroll helper */
+/* animate on scroll helper */
 .reveal {
     opacity: 0;
     transform: translateY(24px);
