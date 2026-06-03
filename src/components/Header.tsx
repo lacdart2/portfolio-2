@@ -1,83 +1,111 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { ArrowLeft } from 'lucide-react'
+
 
 const FULL_NAME = 'Lakhdar Hafsi'
 
+const navLinks = [
+    { label: 'Work', href: '/#projects' },
+    { label: 'About', href: '/#about' },
+    { label: 'Contact', href: '/#contact' },
+]
+
 export default function Header() {
-    const [displayed, setDisplayed] = useState('')
+    const [displayedName, setDisplayedName] = useState('')
     const [menuOpen, setMenuOpen] = useState(false)
     const location = useLocation()
+    const isArticlePage = location.pathname !== '/'
 
     useEffect(() => {
-        let i = 0
-        setDisplayed('')
-        const interval = setInterval(() => {
-            setDisplayed(FULL_NAME.slice(0, i + 1))
-            i++
-            if (i === FULL_NAME.length) clearInterval(interval)
+        let currentIndex = 0
+
+        const typingInterval = window.setInterval(() => {
+            setDisplayedName(FULL_NAME.slice(0, currentIndex + 1))
+            currentIndex++
+            if (currentIndex === FULL_NAME.length) {
+                window.clearInterval(typingInterval)
+            }
         }, 80)
-        return () => clearInterval(interval)
+
+        return () => window.clearInterval(typingInterval)
     }, [])
 
-    const navLinks = [
-        { label: 'Work', href: '/#projects' },
-        { label: 'About', href: '/#about' },
-        { label: 'Contact', href: '/#contact' },
-    ]
+    function closeMenu() {
+        setMenuOpen(false)
+    }
+
+    function toggleMenu() {
+        setMenuOpen((currentState) => !currentState)
+    }
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
-            <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                <Link to="/" className="font-body text-white tracking-widest uppercase text-sm">
-                    {displayed}
-                    <span className="animate-blink text-accent ml-[2px]">|</span>
+        <header className="fixed top-0 right-0 left-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
+            <div className="flex items-center justify-between mx-auto max-w-6xl h-16 px-6">
+                <Link
+                    to="/"
+                    className="font-body text-sm uppercase tracking-widest text-white"
+                    onClick={closeMenu}
+                >
+                    {displayedName}
+                    <span className="ml-[2px] text-accent animate-blink">|</span>
                 </Link>
-
-                {/* Desktop nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden items-center gap-8 md:flex">
                     {navLinks.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
-                            className="font-body text-sm text-faint hover:text-accent transition-colors tracking-widest uppercase"
+                            className="font-body text-sm uppercase tracking-widest text-faint transition-colors hover:text-accent"
                         >
                             {link.label}
                         </a>
                     ))}
-                    {location.pathname !== '/' && (
+                    {isArticlePage && (
                         <Link
                             to="/"
-                            className="font-body text-sm border border-border px-4 py-1 text-muted hover:border-accent hover:text-accent transition-colors tracking-widest uppercase"
+                            className="px-4 py-1 border border-border font-body text-sm uppercase tracking-widest text-muted transition-colors hover:border-accent hover:text-accent"
                         >
-                            ← Back
+                            <ArrowLeft size={14} className="inline mr-1" />
+                            Back
                         </Link>
                     )}
                 </nav>
-
-                {/* Mobile menu button */}
                 <button
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    className="md:hidden text-muted hover:text-accent transition-colors"
-                    aria-label="Toggle menu"
+                    type="button"
+                    onClick={toggleMenu}
+                    className="text-muted transition-colors hover:text-accent md:hidden"
+                    aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={menuOpen}
                 >
-                    <span className="font-body text-xl">{menuOpen ? '✕' : '☰'}</span>
+                    <span className="font-body text-xl">
+                        {menuOpen ? '✕' : '☰'}
+                    </span>
                 </button>
             </div>
-
-            {/* Mobile menu */}
             {menuOpen && (
-                <div className="md:hidden border-t border-border bg-surface px-6 py-4 flex flex-col gap-4">
+                <nav className="flex flex-col gap-4 px-6 py-4 border-t border-border bg-surface md:hidden">
                     {navLinks.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
-                            onClick={() => setMenuOpen(false)}
-                            className="font-body text-sm text-muted hover:text-accent transition-colors tracking-widest uppercase"
+                            onClick={closeMenu}
+                            className="font-body text-sm uppercase tracking-widest text-muted transition-colors hover:text-accent"
                         >
                             {link.label}
                         </a>
                     ))}
-                </div>
+
+                    {isArticlePage && (
+                        <Link
+                            to="/"
+                            onClick={closeMenu}
+                            className="w-fit px-4 py-1 border border-border font-body text-sm uppercase tracking-widest text-muted transition-colors hover:border-accent hover:text-accent"
+                        >
+                            <ArrowLeft size={14} className="inline mr-1" />
+                            Back
+                        </Link>
+                    )}
+                </nav>
             )}
         </header>
     )
