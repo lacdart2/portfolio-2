@@ -1,25 +1,28 @@
+const socials = [
+    { label: 'GitHub', url: 'https://github.com/lacdart2' },
+    { label: 'LinkedIn', url: 'https://linkedin.com/in/lakhdar-hafsi' },
+]
+
 export default function Footer() {
-    const socials = [
-        { label: 'GitHub', url: 'https://github.com/lacdart2' },
-        { label: 'LinkedIn', url: 'https://linkedin.com/in/lakhdar-hafsi' },
-    ]
+    const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="border-t border-border py-10 px-6">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-                <p className="font-body text-faint text-sm tracking-widest uppercase">
-                    © {new Date().getFullYear()} Lakhdar Hafsi
+        <footer className="px-6 py-10 border-t border-border">
+            <div className="flex flex-col items-center justify-between gap-4 mx-auto max-w-6xl md:flex-row">
+                <p className="font-body text-sm uppercase tracking-widest text-faint">
+                    © {currentYear} Lakhdar Hafsi
                 </p>
+
                 <div className="flex items-center gap-6">
-                    {socials.map((s) => (
+                    {socials.map((social) => (
                         <a
-                            key={s.label}
-                            href={s.url}
+                            key={social.label}
+                            href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-body text-sm text-faint hover:text-accent transition-colors tracking-widest uppercase"
+                            className="font-body text-sm uppercase tracking-widest text-faint transition-colors hover:text-accent"
                         >
-                            {s.label}
+                            {social.label}
                         </a>
                     ))}
                 </div>
