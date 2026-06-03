@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
+
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ProjectCard from '../components/ProjectCard'
@@ -41,25 +42,24 @@ export default function Home() {
             <Header />
 
             <section className="mx-auto max-w-6xl px-6 pt-40 pb-24">
-                <div className="flex flex-col gap-6">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    <div className="flex flex-col gap-6 md:max-w-xl">
+                        <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                            <span className="font-body text-xs uppercase tracking-widest text-accent">
+                                Available for work
+                            </span>
+                        </div>
 
-                        <span className="font-body text-xs uppercase tracking-widest text-accent">
-                            Available for work
-                        </span>
-                    </div>
+                        <h1
+                            className="font-display leading-none tracking-tight text-white"
+                            style={{ fontSize: 'clamp(3.5rem, 9vw, 8rem)' }}
+                        >
+                            Frontend
+                            <br />
+                            <span className="text-accent">Developer.</span>
+                        </h1>
 
-                    <h1
-                        className="font-display leading-none tracking-tight text-white"
-                        style={{ fontSize: 'clamp(3.5rem, 9vw, 8rem)' }}
-                    >
-                        Frontend
-                        <br />
-                        <span className="text-accent">Developer.</span>
-                    </h1>
-
-                    <div className="flex flex-col justify-between gap-6 mt-4 md:flex-row md:items-end">
                         <p className="max-w-md font-body text-base leading-relaxed text-muted">
                             Hi, I'm Lakhdar Hafsi — a frontend developer based in Norway,
                             building clean, accessible, and performant web experiences.
@@ -86,6 +86,16 @@ export default function Home() {
                             </a>
                         </div>
                     </div>
+
+                    <div className="relative mt-8 w-48 shrink-0 md:mt-0">
+                        <div className="absolute -top-2 -right-2 w-full h-full border-t-2 border-r-2 border-accent" />
+                        <div className="absolute -bottom-2 -left-2 w-full h-full border-b-2 border-l-2 border-border" />
+                        <img
+                            src="/images/profile.webp"
+                            alt="Lakhdar Hafsi"
+                            className="relative w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -97,12 +107,8 @@ export default function Home() {
                         <p className="mb-2 font-body text-xs uppercase tracking-widest text-accent">
                             Selected work
                         </p>
-
-                        <h2 className="font-display text-4xl text-white">
-                            Projects
-                        </h2>
+                        <h2 className="font-display text-4xl text-white">Projects</h2>
                     </div>
-
                     <span className="hidden font-body text-sm text-faint md:block">
                         {projects.length} projects
                     </span>
@@ -129,21 +135,16 @@ export default function Home() {
                         <p className="mb-2 font-body text-xs uppercase tracking-widest text-accent">
                             About me
                         </p>
-
-                        <h2 className="mb-6 font-display text-4xl text-white">
-                            Who I am
-                        </h2>
-
+                        <h2 className="mb-6 font-display text-4xl text-white">Who I am</h2>
                         <p className="mb-4 font-body leading-relaxed text-muted">
                             I'm a frontend development student at Noroff Vocational College,
                             currently in my second year. I'm passionate about building
                             interfaces that are both visually sharp and technically sound.
                         </p>
-
                         <p className="font-body leading-relaxed text-muted">
                             My focus is on clean code, accessible design, and building things
-                            that work well on every device. I'm actively looking for opportunities
-                            to grow as a developer.
+                            that work well on every device. I'm actively looking for
+                            opportunities to grow as a developer.
                         </p>
                     </div>
 
@@ -151,7 +152,6 @@ export default function Home() {
                         <p className="mb-6 font-body text-xs uppercase tracking-widest text-accent">
                             Tech stack
                         </p>
-
                         <div className="grid grid-cols-2 gap-2">
                             {techStack.map((tech) => (
                                 <div
@@ -174,11 +174,7 @@ export default function Home() {
                         <p className="mb-2 font-body text-xs uppercase tracking-widest text-accent">
                             Get in touch
                         </p>
-
-                        <h2 className="mb-6 font-display text-4xl text-white">
-                            Let's talk
-                        </h2>
-
+                        <h2 className="mb-6 font-display text-4xl text-white">Let's talk</h2>
                         <p className="font-body leading-relaxed text-muted">
                             I'm open to frontend roles, internships, and freelance projects.
                             Drop me a message and I'll get back to you.
