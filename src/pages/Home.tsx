@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import ProjectCard from '../components/ProjectCard'
 import ContactForm from '../components/ContactForm'
 import { projects } from '../data/projects'
+import { ArrowRight } from 'lucide-react'
 
 export default function Home() {
     useEffect(() => {
@@ -45,7 +46,7 @@ export default function Home() {
                                 href="#projects"
                                 className="font-body text-sm tracking-widest uppercase bg-accent text-background px-6 py-3 hover:bg-accent-hover transition-colors"
                             >
-                                View work →
+                                View work <ArrowRight size={14} className="inline ml-1" />
                             </a>
                             <a
                                 href="https://github.com/lacdart2"
@@ -59,11 +60,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Divider */}
             <div className="border-t border-border" />
 
-            {/* Projects */}
+            {/* projects */}
             <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
                 <div className="flex items-end justify-between mb-12 reveal">
                     <div>
@@ -85,11 +84,8 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-
-            {/* Divider */}
             <div className="border-t border-border" />
 
-            {/* About */}
             <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                     <div className="reveal">
@@ -126,10 +122,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Divider */}
             <div className="border-t border-border" />
 
-            {/* Contact */}
             <section id="contact" className="py-24 px-6 max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                     <div className="reveal">

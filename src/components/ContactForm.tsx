@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ArrowRight } from 'lucide-react'
 
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -89,7 +90,11 @@ export default function ContactForm() {
                     disabled={status === 'sending'}
                     className="w-fit px-8 py-3 bg-accent font-body text-sm uppercase tracking-widest text-background transition-colors hover:bg-accent-hover disabled:opacity-50"
                 >
-                    {status === 'sending' ? 'Sending...' : 'Send message →'}
+                    {status === 'sending' ? 'Sending...' : (
+                        <span className="flex items-center gap-2">
+                            Send message <ArrowRight size={14} />
+                        </span>
+                    )}
                 </button>
 
                 {status === 'sent' && (
