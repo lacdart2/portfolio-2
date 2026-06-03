@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 import BrowserMockup from './BrowserMockup'
+import { ArrowRight } from 'lucide-react'
 
 interface Props {
     project: Project
@@ -31,7 +32,7 @@ export default function ProjectCard({ project, index }: Props) {
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-accent text-xs font-body tracking-widest uppercase">
                     <span>View project</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
                 </div>
             </div>
         </Link>
