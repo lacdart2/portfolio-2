@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { ArrowRight } from 'lucide-react'
 
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error'
@@ -14,7 +14,6 @@ const emptyForm: ContactFormData = {
     email: '',
     message: '',
 }
-
 export default function ContactForm() {
     const [form, setForm] = useState<ContactFormData>(emptyForm)
     const [status, setStatus] = useState<FormStatus>('idle')
@@ -23,7 +22,7 @@ export default function ContactForm() {
         'w-full px-4 py-3 border border-border bg-card font-body text-sm text-muted transition-colors placeholder:text-faint focus:border-accent focus:outline-none'
 
     function handleChange(
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
         const { name, value } = event.target
 
@@ -33,7 +32,7 @@ export default function ContactForm() {
         }))
     }
 
-    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         setStatus('sending')
 
@@ -90,9 +89,12 @@ export default function ContactForm() {
                     disabled={status === 'sending'}
                     className="w-fit px-8 py-3 bg-accent font-body text-sm uppercase tracking-widest text-background transition-colors hover:bg-accent-hover disabled:opacity-50"
                 >
-                    {status === 'sending' ? 'Sending...' : (
+                    {status === 'sending' ? (
+                        'Sending...'
+                    ) : (
                         <span className="flex items-center gap-2">
-                            Send message <ArrowRight size={14} />
+                            Send message
+                            <ArrowRight size={14} aria-hidden="true" />
                         </span>
                     )}
                 </button>
