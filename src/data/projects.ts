@@ -27,8 +27,8 @@ export const projects: Project[] = [
         liveUrl: 'https://fantastic-cajeta-049b07.netlify.app/',
         repoUrl: 'https://github.com/lacdart2/bootstrap-css_frameworks',
         description: `A practical Bootstrap project built during the CSS Frameworks course at Noroff. 
-The project demonstrates core Bootstrap concepts including the grid system, navigation, 
-accordion components, forms, and responsive utilities — all without writing custom CSS from scratch.`,
+        The project demonstrates core Bootstrap concepts including the grid system, navigation, 
+        accordion components, forms, and responsive utilities — all without writing custom CSS from scratch.`,
         techStack: ['HTML', 'Bootstrap', 'SASS', 'CSS'],
         improvements: [
             'Added proper README documentation',
@@ -47,8 +47,8 @@ accordion components, forms, and responsive utilities — all without writing cu
         liveUrl: 'https://your-sp2-live-url.com',
         repoUrl: 'https://github.com/lacdart2/semester-project-2-auction-website_lakhdar-hafsi',
         description: `Auction House is a full-featured bidding platform built as part of the Noroff Semester Project 2. 
-Users can register, list items for auction, place bids, and track their virtual currency. 
-The project integrates the Noroff Auction API and demonstrates async JavaScript, authentication, and dynamic DOM manipulation.`,
+        Users can register, list items for auction, place bids, and track their virtual currency. 
+        The project integrates the Noroff Auction API and demonstrates async JavaScript, authentication, and dynamic DOM manipulation.`,
         techStack: ['HTML', 'CSS', 'JavaScript', 'Noroff API'],
         improvements: [
             'Refactored async fetch calls for cleaner error handling',
@@ -64,12 +64,12 @@ The project integrates the Noroff Auction API and demonstrates async JavaScript,
         thumbnail: '/images/holidaze-website_PE2.png',
         articleImage: '/images/holidaze-website_PE2.png',
         imageCaption: 'Holidaze — holiday venue booking platform built with React and Noroff API',
-        liveUrl: 'https://your-holidaze-live-url.com',
+        liveUrl: 'https://holidaze-pe2.vercel.app/',
         repoUrl: 'https://github.com/lacdart2/holidaze-pe2',
         description: `Holidaze is a venue booking application built for the Noroff Project Exam 2. 
-The app allows customers to browse and book holiday venues, while venue managers can create and manage listings. 
-Built with React and the Noroff Holidaze API, it demonstrates component architecture, 
-routing, form handling, and API integration in a real-world scenario.`,
+        The app allows customers to browse and book holiday venues, while venue managers can create and manage listings. 
+        Built with React and the Noroff Holidaze API, it demonstrates component architecture, 
+        routing, form handling, and API integration in a real-world scenario.`,
         techStack: ['React', 'JavaScript', 'CSS', 'Noroff API'],
         improvements: [
             'Fixed broken image fallbacks on venue cards',
