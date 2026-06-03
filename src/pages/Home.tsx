@@ -42,10 +42,10 @@ export default function Home() {
             <Header />
 
             <section className="mx-auto max-w-6xl px-6 pt-40 pb-24">
-                <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-                    <div className="flex flex-col gap-6 md:max-w-xl">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                    <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                            <span className="w-2 h-2 rounded-full bg-accent animate-blink" />
                             <span className="font-body text-xs uppercase tracking-widest text-accent">
                                 Available for work
                             </span>
@@ -86,14 +86,13 @@ export default function Home() {
                             </a>
                         </div>
                     </div>
-
-                    <div className="relative mt-8 w-48 shrink-0 md:mt-0">
+                    <div className="relative mt-8 w-1/2 justify-self-end md:mt-0 md:w-48 lg:w-52 max-[440px]:w-full">
                         <div className="absolute -top-2 -right-2 w-full h-full border-t-2 border-r-2 border-accent" />
                         <div className="absolute -bottom-2 -left-2 w-full h-full border-b-2 border-l-2 border-border" />
                         <img
                             src="/images/profile.webp"
                             alt="Lakhdar Hafsi"
-                            className="relative w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                            className="relative w-full max-h-[400px] object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 md:max-h-none"
                         />
                     </div>
                 </div>
@@ -165,9 +164,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
             <div className="border-t border-border" />
-
             <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
                 <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
                     <div className="reveal">
@@ -186,7 +183,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
             <Footer />
         </div>
     )
