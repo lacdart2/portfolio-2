@@ -58,31 +58,49 @@ export default function ContactForm() {
     return (
         <div className="max-w-xl">
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <input
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    className={inputClass}
-                />
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="name" className="text-xs tracking-widest uppercase font-body text-faint">
+                        Name
+                    </label>
+                    <input
+                        id="name"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        className={inputClass}
+                    />
+                </div>
 
-                <input
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="Your email"
-                    className={inputClass}
-                />
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="email" className="text-xs tracking-widest uppercase font-body text-faint">
+                        Email
+                    </label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="Your email"
+                        className={inputClass}
+                    />
+                </div>
 
-                <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Your message"
-                    rows={5}
-                    className={`${inputClass} resize-none`}
-                />
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="message" className="text-xs tracking-widest uppercase font-body text-faint">
+                        Message
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        placeholder="Your message"
+                        rows={5}
+                        className={`${inputClass} resize-none`}
+                    />
+                </div>
 
                 <button
                     type="submit"
