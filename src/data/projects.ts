@@ -25,7 +25,7 @@ export const projects: Project[] = [
         articleImage: '/images/pulse.webp',
         imageCaption: 'Pulse — social media app built with Tailwind CSS v4 for the CSS Frameworks CA at Noroff',
         liveUrl: 'https://pulse-social-ca.netlify.app/',
-        repoUrl: 'https://github.com/lacdart2/css-frameworks-ca',
+        repoUrl: 'https://github.com/lacdart2/css-frameworks-ca/tree/css-frameworks',
         description: `Pulse is a social media feed application built for the CSS Frameworks CA at Noroff. 
         The project uses Tailwind CSS v4 with a custom dark design system — cyan accent, Inter and Sora fonts. 
         Features include post creation, like toggle, follow/unfollow, sort filtering by latest, popular and following, 
