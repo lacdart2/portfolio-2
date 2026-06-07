@@ -48,7 +48,7 @@ export const projects: Project[] = [
         articleImage: '/images/bidly.webp',
         imageCaption: 'Bidly — auction house rebuilt with Noroff API v2 for Portfolio 2 at Noroff',
         liveUrl: 'https://auction-website-semester-project2.netlify.app/',
-        repoUrl: 'https://github.com/lacdart2/semester-project-2-auction-website_lakhdar-hafsi',
+        repoUrl: 'https://github.com/lacdart2/semester-project-2-auction-website_lakhdar-hafsi/tree/auction-v2-2026',
         description: `Bidly is a full-featured auction platform — rebranded from the original Year 1 "BID it ALL" submission. 
         For Portfolio 2, the project was migrated from Noroff API v1 to v2, fully redesigned with a dark theme, 
         and extended with new features. Users can browse listings without an account, register with a Noroff email, 

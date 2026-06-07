@@ -1,6 +1,6 @@
 const socials = [
     { label: 'GitHub', url: 'https://github.com/lacdart2' },
-    { label: 'LinkedIn', url: 'https://linkedin.com/in/lakhdar-hafsi' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lakhdar-hafsi-24b31060' },
 ]
 
 export default function Footer() {
