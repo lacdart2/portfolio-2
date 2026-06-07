@@ -15,7 +15,7 @@ const browserDots = [
 export default function BrowserMockup({ src, alt, url }: BrowserMockupProps) {
     return (
         <div className="w-full border border-border bg-card">
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-surface">
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-border  bg-surface">
                 <div className="flex items-center gap-1.5">
                     {browserDots.map((colorClass) => (
                         <span
@@ -24,8 +24,8 @@ export default function BrowserMockup({ src, alt, url }: BrowserMockupProps) {
                         />
                     ))}
                 </div>
-                <div className="flex-1 mx-4">
-                    <div className="flex items-center gap-2 px-3 py-1 border border-border bg-background">
+                <div className="flex-1 mx-4 min-w-0">
+                    <div className="flex items-center gap-2 px-3 py-1 border border-border  bg-background overflow-hidden">
                         <Lock size={10} className="text-faint" />
                         <span className="truncate font-body text-xs text-faint">
                             {url}
