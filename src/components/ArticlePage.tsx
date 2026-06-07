@@ -27,6 +27,15 @@ export default function ArticlePage({ slug }: ArticlePageProps) {
             <Header />
 
             <main className="mx-auto max-w-4xl px-6 pt-32 pb-24">
+
+                {/* back to other projects */}
+                <a href="/#projects"
+                    className="inline-flex items-center gap-2 font-body text-xs uppercase tracking-widest text-faint hover:text-accent transition-colors mb-10"
+                >
+                    <ArrowRight size={12} className="rotate-180" aria-hidden="true" />
+                    Back to Projects
+                </a>
+
                 <div className="flex items-center justify-between mb-8">
                     <p className="font-body text-xs uppercase tracking-widest text-accent">
                         {project.category}
@@ -110,6 +119,34 @@ export default function ArticlePage({ slug }: ArticlePageProps) {
                         ))}
                     </ul>
                 </section>
+                {/* prev / next navigation for projects */}
+                <div className="flex justify-between mt-16 pt-8 border-t border-border">
+                    {(() => {
+                        const currentIndex = projects.findIndex(p => p.slug === slug)
+                        const prev = projects[currentIndex - 1]
+                        const next = projects[currentIndex + 1]
+                        return (
+                            <>
+                                <div>
+                                    {prev && (
+                                        <a href={`/${prev.slug}`} className="flex flex-col gap-1 group">
+                                            <span className="font-body text-xs uppercase tracking-widest text-faint">← Previous</span>
+                                            <span className="font-body text-sm text-muted group-hover:text-accent transition-colors">{prev.title}</span>
+                                        </a>
+                                    )}
+                                </div>
+                                <div className="text-right">
+                                    {next && (
+                                        <a href={`/${next.slug}`} className="flex flex-col gap-1 group">
+                                            <span className="font-body text-xs uppercase tracking-widest text-faint">Next →</span>
+                                            <span className="font-body text-sm text-muted group-hover:text-accent transition-colors">{next.title}</span>
+                                        </a>
+                                    )}
+                                </div>
+                            </>
+                        )
+                    })()}
+                </div>
             </main>
 
             <Footer />
